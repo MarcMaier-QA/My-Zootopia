@@ -15,13 +15,17 @@ def serialize_animal(animal):
     html_string += f'  <div class="card__title">{animal.get("name")}</div>\n'
     html_string += '  <p class="card__text">\n'
 
-    html_string += f'      <strong>Diet:</strong> {animal.get("diet")}<br/>\n'
+    characteristics = animal.get("characteristics", {})
+
+    diet = characteristics.get("diet")
+    if diet:
+        html_string += f'      <strong>Diet:</strong> {animal.get("diet")}<br/>\n'
 
     locations = animal.get('locations')
     if locations:
         html_string += f'      <strong>Location:</strong> {locations[0]}<br/>\n'
 
-    animal_type = animal.get('type')
+    animal_type = characteristics.get('type')
     if animal_type:
         html_string += f'      <strong>Type:</strong> {animal_type}<br/>\n'
 
