@@ -19,7 +19,7 @@ def serialize_animal(animal):
 
     diet = characteristics.get("diet")
     if diet:
-        html_string += f'      <strong>Diet:</strong> {animal.get("diet")}<br/>\n'
+        html_string += f'      <strong>Diet:</strong> {diet}<br/>\n'
 
     locations = animal.get('locations')
     if locations:
@@ -27,7 +27,7 @@ def serialize_animal(animal):
 
     animal_type = characteristics.get('type')
     if animal_type:
-        html_string += f'      <strong>Type:</strong> {animal_type}<br/>\n'
+        html_string += f'      <strong>Type:</strong> {type}<br/>\n'
 
     html_string += '  </p>\n'
     html_string += '</li>\n'
